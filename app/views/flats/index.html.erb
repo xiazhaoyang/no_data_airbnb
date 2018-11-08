@@ -1,0 +1,17 @@
+<h1>Flats#index</h1>
+<p>Find me in app/views/flats/index.html.erb</p>
+
+<style text="style">
+  .image_flat{
+    width: 200px;
+    height: 150px;
+  }
+</style>
+
+<% @flats.each_with_index do |flat, index| %>
+    <img class="image_flat" src=<%= flat["imageUrl"] %> alt="">
+    <div> <%= flat["name"]  %> </div>
+    <div> <%= flat["price"]  %> </div>
+    <%= link_to flat["name"], flat_path(index) %>
+<% end %>
+
